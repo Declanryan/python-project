@@ -350,18 +350,20 @@ def main():
     enter_label = Label(root, padx=5, pady=5, text="URL for data")
     enter_label.pack()
     url_box = Entry(root, textvariable=url)
+    url_box.pack()
     url_box.focus_set()
-    start_btn = Button(root, text="START", command=start, padx=5, pady=5, bg="black", fg="white")
+    start_btn = Button(root, text="START", command=lambda : start(root), padx=5, pady=5, bg="black", fg="white")
     start_btn.pack()
     stars1 = Label(root, text="*" * 60)
     stars1.pack()
     stars2 = Label(root, text="*" * 60)
     stars2.pack()
-    start(root)
+
 
     # shows the frame and chart
     plt.show()
     root.mainloop()
+
 
 # Run if stand-alone
 if __name__ == '__main__':
