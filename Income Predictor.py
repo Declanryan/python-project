@@ -263,10 +263,10 @@ def report_results(result_set_list):
 
     return tot_rec
 
-def start(root):
+def start(root, url_box):
     try:  # The get url function gives us http header information and the content as byte.
         # the file is then decoded into a list of str that has been split using the last char(\r)
-        header, contents_list = get_url_text("http://mf2.dit.ie/machine-learning-income.data")
+        header, contents_list = get_url_text(url_box.get())
 
         # time is used two keep a check on the running time of the program
         start_time = time.time()
@@ -352,7 +352,7 @@ def main():
     url_box = Entry(root, textvariable=url)
     url_box.pack()
     url_box.focus_set()
-    start_btn = Button(root, text="START", command=lambda : start(root), padx=5, pady=5, bg="black", fg="white")
+    start_btn = Button(root, text="START", command=lambda : start(root, url_box), padx=5, pady=5, bg="black", fg="white")
     start_btn.pack()
     stars1 = Label(root, text="*" * 60)
     stars1.pack()
