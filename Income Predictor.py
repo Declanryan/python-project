@@ -352,7 +352,7 @@ def main():
     url_box = Entry(root, textvariable=url)
     url_box.pack()
     url_box.focus_set()
-    start_btn = Button(root, text="START", command=lambda : start(root, url_box), padx=5, pady=5, bg="black", fg="white")
+    start_btn = Button(root, text="START", command=lambda creator="dryan005": start(root, url_box), padx=5, pady=5, bg="black", fg="white")
     start_btn.pack()
     stars1 = Label(root, text="*" * 60)
     stars1.pack()
